@@ -1,0 +1,132 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret home_lat
+  longitude: !secret home_long
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 0
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/New_York
+  # Customization file
+  customize: !include customize.yaml
+  # add totp 2fa / mfa auth
+  auth_mfa_modules:
+    - type: totp
+
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  include_used_components: true
+
+# Discover some devices automatically
+discovery:
+  enable:
+    - dlna_dmr
+    - homekit
+
+# here's all my components! woo
+
+device_tracker:
+  - platform: bluetooth_le_tracker
+  - platform: tile
+    username: !secret tile_username
+    password: !secret tile_password
+  - platform: automatic
+    client_id: !secret automatic_id
+    secret: !secret automatic_secret
+
+dyson:
+  username: !secret dyson_username
+  password: !secret dyson_password
+  language: US
+
+fastdotcom:
+  scan_interval:
+      minutes: 30
+
+homekit:
+  filter:
+    include_domains:
+    - alarm_control_panel
+    - automation
+    - input_boolean
+    - remote
+    - script
+    - binary_sensor
+    - climate
+    - cover
+    - device_tracker
+    - fan
+    # - light
+    - lock
+    - media_player
+    - sensor
+    - switch
+
+
+ifttt:
+  key: !secret ifttt_key
+
+spotify:
+  client_id: !secret spotify_id
+  client_secret: !secret spotify_secret
+  
+system_health:
+
+# Text to speech
+tts:
+  - platform: google_translate
+    service_name: google_say
+
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Sensors
+sensor:
+  # Weather prediction
+  - platform: yr
+  - platform: google_wifi
+    host: 192.168.86.1
+  - platform: uptime
+
+
+
+
+# Cloud
+cloud:
+
+# media_player: !include media_player.yaml
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml

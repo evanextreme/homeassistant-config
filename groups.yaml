@@ -1,0 +1,57 @@
+#   default_view:
+#     view: yes
+#     name: Main
+#     entities:
+#       - group.kitchen
+#       - group.living_room
+
+#   kitchen:
+#     name: Kitchen
+#     entities:
+#       - light.lightstrip
+#       - media_player.kitchen_smart_display
+
+#   living_room:
+#     name: Living Room
+#     entities:
+#       - light.front_left_lamp
+#       - light.front_right_lamp
+#       - light.back_left_lamp
+#       - light.back_center_lamp
+#       - media_player.living_room_speaker
+#       - media_player.living_room_tv
+#       - media_player.living_room_tv_2
+#       - media_player.living_room_tv_3
+#       - remote.living_room_hub
+
+#   evans_bedroom:
+#     name: Evan's Bedroom
+#     view: true
+#     entities:
+#       - remote.evans_bedroom
+#       - switch.evans_desktop_pc
+#       - group.evans_bedroom_tv
+#       - group.evans_lights
+#       - group.dyson
+      
+#   evans_lights:
+#     entities:
+#       - light.nighttable_lamp
+#   evans_bedroom_tv:
+#     name: Evan's Bedroom TV
+#     entities:
+#       - media_player.evans_bedroom_tv_physical
+#       - media_player.evans_bedroom_tv_ui
+#       - media_player.evans_bedroom_apple_tv
+      
+#   dyson:
+#     name: Dyson Pure Hot + Cool Link
+#     view: false
+#     entities:
+#       - climate.unnamed_device
+#       - fan.unnamed_device
+#       - sensor.none_aqi
+#       - sensor.none_dust
+#       - sensor.none_filter_life
+#       - sensor.none_humidity
+#       - sensor.none_temperature

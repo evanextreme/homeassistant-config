@@ -1,0 +1,36 @@
+fan.unnamed_device:
+  friendly_name: Dyson Fan
+climate.unnamed_device:
+  friendly_name: Dyson Climate
+group.all_fans:
+  unit_of_measurement: Fahrenheit
+sensor.none_humidity:
+  friendly_name: Dyson Humidity
+sensor.none_aqi:
+  friendly_name: Dyson AQI
+sensor.none_dust:
+  friendly_name: Dyson Dust
+sensor.none_filter_life:
+  friendly_name: Dyson Filter Life
+  unit_of_measurement: hours
+sensor.none_temperature:
+  friendly_name: Dyson Temperature
+device_tracker.tile_0690ced5bcaa4b23:
+  friendly_name: Wallet
+  icon: mdi:wallet
+sensor.google_wifi_last_restart:
+  friendly_name: Router Last Restart
+sensor.google_wifi_local_ip:
+  friendly_name: WiFi Local IP
+sensor.google_wifi_status:
+  friendly_name: WiFi Status
+sensor.google_wifi_uptime:
+  friendly_name: WiFi Uptime
+sensor.fast_com_download:
+  friendly_name: WiFi Speed
+device_tracker.tile_d0ec1578c3262b9d:
+  friendly_name: Keys
+  icon: mdi:key
+device_tracker.tile_fe97836f482285e1:
+  friendly_name: Eyeglasses
+  icon: mdi:glasses
